@@ -8,7 +8,10 @@ class Player extends React.Component {
   render() {
     return (
       <div className="player">
-        <div className="player-name">{this.props.name}</div>
+        <div className="player-name">
+          <a className="remove-player" onClick={this.props.onRemove}>X</a>
+          {this.props.name}
+        </div>
         <div className="player-score">
           <Counter
             onChange={this.props.onScoreChange}
@@ -23,7 +26,8 @@ class Player extends React.Component {
 Player.propTypes = {
   name: React.PropTypes.string.isRequired,
   score: React.PropTypes.number.isRequired,
-  onScoreChange: React.PropTypes.func.isRequired
+  onScoreChange: React.PropTypes.func.isRequired,
+  onRemove: React.PropTypes.func.isRequired,
 };
 
 export default Player;
