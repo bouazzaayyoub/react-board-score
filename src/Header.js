@@ -1,4 +1,5 @@
 import React from "react";
+import StopWatch from "./StopWatch"
 
 function Stats(props) {
   var totalPlayers = props.players.length;
@@ -7,16 +8,18 @@ function Stats(props) {
   }, 0);
   return (
     <div className="stats">
-      <tbody>
-        <tr>
-          <td>Players: </td>
-          <td>{totalPlayers}</td>
-        </tr>
-        <tr>
-          <td>Total points: </td>
-          <td>{totalPoints}</td>
-        </tr>
-      </tbody>
+      <table>
+        <tbody>
+          <tr>
+            <td>Players: </td>
+            <td>{totalPlayers}</td>
+          </tr>
+          <tr>
+            <td>Total points: </td>
+            <td>{totalPoints}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }
@@ -28,6 +31,7 @@ function Header(props) {
     <div className="header">
       <Stats players={props.players} />
       <h1>{props.title}</h1>
+      <StopWatch />
     </div>
   );
 }

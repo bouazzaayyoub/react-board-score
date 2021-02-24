@@ -40,14 +40,15 @@ var App = React.createClass({
   },
 
   onPlayerAdd: function(name) {
-    this.state.players.push({
-      name: name,
-      score: 0,
-      id: nextId
-    });
-    this.setState(this.state);
-    nextId++;
-    console.log(name);
+    if (name != "") {
+      this.state.players.push({
+        name: name,
+        score: 0,
+        id: nextId
+      });
+      this.setState(this.state);
+      nextId++;
+    }
   },
   onRemovePlayer: function(index) {
     this.state.players.splice(index, 1);
